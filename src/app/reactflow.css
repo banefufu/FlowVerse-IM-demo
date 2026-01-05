@@ -1,0 +1,85 @@
+/* ReactFlow 自定义样式 */
+.react-flow__node {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.react-flow__node:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.react-flow__node.selected {
+  box-shadow: 0 0 0 2px #3b82f6, 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.react-flow__edge.selected {
+  z-index: 10;
+}
+
+.react-flow__edge-path {
+  stroke-width: 2;
+}
+
+.react-flow__edge.animated .react-flow__edge-path {
+  stroke-dasharray: 5, 5;
+  animation: react-flow__edge-animation 1s linear infinite;
+}
+
+@keyframes react-flow__edge-animation {
+  to {
+    stroke-dashoffset: -10;
+  }
+}
+
+.react-flow__controls {
+  bottom: 20px !important;
+  left: 20px !important;
+}
+
+.react-flow__minimap {
+  bottom: 20px !important;
+  right: 20px !important;
+}
+
+.react-flow__panel {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.dark .react-flow__panel {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+/* 自定义 Handle 样式 */
+.react-flow__handle {
+  width: 12px !important;
+  height: 12px !important;
+  border: 2px solid white;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.react-flow__handle:hover {
+  transform: scale(1.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.react-flow__handle-connecting {
+  animation: react-flow__handle-connecting 1s linear infinite;
+}
+
+@keyframes react-flow__handle-connecting {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
